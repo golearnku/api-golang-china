@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use App\Node;
 use App\Http\Resources\NodeResource;
 use App\Http\Resources\ThreadResource;
-use App\Node;
-use Illuminate\Http\Request;
 
 class NodeController extends Controller
 {
@@ -15,43 +15,44 @@ class NodeController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     *
+     * @param Request $request
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index(Request $request)
     {
-        if ($request->has('all')) {
+        if($request->has('all')) {
             $builder = Node::with('children')->root();
         } else {
             $builder = Node::leaf();
         }
 
         $nodes = $builder->latest()
-                    ->filter($request->all())
-                    ->paginate($request->get('per_page', 20));
+            ->filter($request->all())
+            ->paginate($request->get('per_page', 20));
 
         return NodeResource::collection($nodes);
     }
 
+    /**
+     * @param Request $request
+     * @param Node    $node
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
     public function threads(Request $request, Node $node)
     {
         $threads = $node->threads()
-                        ->published()
-                        ->latest()
-                        ->filter($request->all())
-                        ->paginate($request->get('per_page', 20));
+            ->published()
+            ->latest()
+            ->filter($request->all())
+            ->paginate($request->get('per_page', 20));
 
         return ThreadResource::collection($threads);
     }
 
     /**
      * Store a newly created resource in storage.
-     *
      * @param \Illuminate\Http\Request $request
-     *
      * @return \App\Http\Resources\NodeResource
-     *
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function store(Request $request)
@@ -66,9 +67,7 @@ class NodeController extends Controller
 
     /**
      * Display the specified resource.
-     *
      * @param \App\Node $node
-     *
      * @return \App\Http\Resources\NodeResource
      */
     public function show(Node $node)
@@ -78,12 +77,9 @@ class NodeController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
      * @param \Illuminate\Http\Request $request
      * @param \App\Node                $node
-     *
      * @return \App\Http\Resources\NodeResource
-     *
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update(Request $request, Node $node)
@@ -101,11 +97,8 @@ class NodeController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
      * @param \App\Node $node
-     *
      * @return \Illuminate\Http\JsonResponse
-     *
      * @throws \Exception
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
