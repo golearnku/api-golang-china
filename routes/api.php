@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers: Authorization, Content-Type, Access-Control-Allow-Headers, X-Requested-With');
-header('Access-Control-Allow-Methods: *');
+//header('Access-Control-Allow-Origin: *');
+//header('Access-Control-Allow-Headers: Authorization, Content-Type, Access-Control-Allow-Headers, X-Requested-With');
+//header('Access-Control-Allow-Methods: *');
 
 // Auth
 Route::post('auth/register', 'AuthController@register');
@@ -40,8 +40,7 @@ Route::post('comments/{comment}/up-vote', 'CommentController@upVote');
 Route::post('comments/{comment}/down-vote', 'CommentController@downVote');
 Route::post('comments/{comment}/cancel-vote', 'CommentController@cancelVote');
 
-Route::post('notifications/mark-all-as-read', 'NotificationController@markAllAsRead')
-            ->name('notifications.mark_all_as_read');
+Route::post('notifications/mark-all-as-read', 'NotificationController@markAllAsRead')->name('notifications.mark_all_as_read');
 
 // Resources
 Route::resources([

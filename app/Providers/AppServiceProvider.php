@@ -53,6 +53,8 @@ class AppServiceProvider extends ServiceProvider
         $this->registerValidators();
 
         $this->registerEsEngine();
+
+        $this->registerIdeHelper();
     }
 
     /**
@@ -62,6 +64,13 @@ class AppServiceProvider extends ServiceProvider
     {
         foreach ($this->validators as $rule => $validator) {
             Validator::extend($rule, "{$validator}@validate");
+        }
+    }
+
+    protected function registerIdeHelper()
+    {
+        if ($this->app->environment() !== 'production') {
+            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
         }
     }
 

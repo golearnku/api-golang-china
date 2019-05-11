@@ -26,7 +26,6 @@ use UrlSigner;
  * Class User.
  *
  * @author overtrue <i@overtrue.me>
- *
  * @property string                                                   $name
  * @property string                                                   $username
  * @property int                                                      $energy
@@ -55,10 +54,57 @@ use UrlSigner;
  * @property \Illuminate\Database\Eloquent\Relations\HasMany          $comments
  * @property \Illuminate\Notifications\DatabaseNotificationCollection $unreadNotifications
  * @property \Illuminate\Notifications\DatabaseNotificationCollection $notifications
- *
  * @method static \App\User popular()
  * @method static \App\User recent()
  * @method static \App\User admin()
+ * @property int $id
+ * @property string|null $phone
+ * @property string $gender
+ * @property string|null $remember_token
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Activity[] $activities
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Passport\Client[] $clients
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[] $followers
+ * @property-read mixed $has_followed
+ * @property-read mixed $url
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Passport\Token[] $tokens
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User filter($input = array(), $filter = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User paginateFilter($perPage = null, $columns = array(), $pageName = 'page', $page = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User simplePaginateFilter($perPage = null, $columns = array(), $pageName = 'page', $page = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User valid()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereActivatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereAvatar($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereBannedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereBeginsWith($column, $value, $boolean = 'and')
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereBio($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereCache($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEndsWith($column, $value, $boolean = 'and')
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEnergy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereExtends($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereGender($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereIsAdmin($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereLastActiveAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereLevel($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereLike($column, $value, $boolean = 'and')
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRealname($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereSettings($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUsername($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User withoutBanned()
+ * @mixin \Eloquent
  */
 class User extends Authenticatable
 {

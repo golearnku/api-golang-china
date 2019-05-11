@@ -11,7 +11,6 @@ use Overtrue\LaravelFollow\Traits\CanBeSubscribed;
  * Class Node.
  *
  * @author overtrue <i@overtrue.me>
- *
  * @property int                                                   $node_id
  * @property string                                                $title
  * @property string                                                $icon
@@ -21,6 +20,42 @@ use Overtrue\LaravelFollow\Traits\CanBeSubscribed;
  * @property object                                                $cache
  * @property \App\Node                                             $node
  * @property \Illuminate\Database\Eloquent\Relations\BelongsToMany $threads
+ * @property int $id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Node[] $children
+ * @property-read mixed $has_subscribed
+ * @property-read \App\Node $parent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[] $subscribers
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node filter($input = array(), $filter = null)
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node leaf()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node newQuery()
+ * @method static \Illuminate\Database\Query\Builder|\App\Node onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node paginateFilter($perPage = null, $columns = array(), $pageName = 'page', $page = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node query()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node root()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node simplePaginateFilter($perPage = null, $columns = array(), $pageName = 'page', $page = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereBanner($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereBeginsWith($column, $value, $boolean = 'and')
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereCache($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereEndsWith($column, $value, $boolean = 'and')
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereIcon($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereLike($column, $value, $boolean = 'and')
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereNodeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereSettings($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Node whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Node withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Node withoutTrashed()
+ * @mixin \Eloquent
  */
 class Node extends Model
 {

@@ -19,7 +19,6 @@ use Overtrue\LaravelFollow\Traits\CanBeSubscribed;
  * Class Thread.
  *
  * @author overtrue <i@overtrue.me>
- *
  * @property int            $user_id
  * @property string         $title
  * @property \Carbon\Carbon $excellent_at
@@ -31,8 +30,56 @@ use Overtrue\LaravelFollow\Traits\CanBeSubscribed;
  * @property bool           $has_excellent
  * @property bool           $has_frozen
  * @property object         $cache
- *
  * @method static \App\Thread published()
+ * @property int $id
+ * @property int $node_id
+ * @property \Illuminate\Support\Carbon|null $published_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @property string|null $popular_at 加精时间
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Comment[] $comments
+ * @property-read \App\Content $content
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[] $favoriters
+ * @property-read mixed $has_liked
+ * @property-read mixed $has_subscribed
+ * @property-read mixed $highlights
+ * @property-read mixed $url
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[] $likers
+ * @property-read \App\Node $node
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Report[] $report
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[] $subscribers
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Tag[] $tags
+ * @property-read \App\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread filter($input = array(), $filter = null)
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread newQuery()
+ * @method static \Illuminate\Database\Query\Builder|\App\Thread onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread paginateFilter($perPage = null, $columns = array(), $pageName = 'page', $page = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread query()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread simplePaginateFilter($perPage = null, $columns = array(), $pageName = 'page', $page = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereBannedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereBeginsWith($column, $value, $boolean = 'and')
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereCache($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereEndsWith($column, $value, $boolean = 'and')
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereExcellentAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereFrozenAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereLike($column, $value, $boolean = 'and')
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereNodeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread wherePinnedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread wherePopularAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread wherePublishedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Thread whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Thread withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Thread withoutTrashed()
+ * @mixin \Eloquent
  */
 class Thread extends Model implements Commentable
 {
