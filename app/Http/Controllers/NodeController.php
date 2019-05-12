@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Node;
+use Illuminate\Http\Request;
 use App\Http\Resources\NodeResource;
 use App\Http\Resources\ThreadResource;
 
@@ -25,7 +25,6 @@ class NodeController extends Controller
         } else {
             $builder = Node::leaf();
         }
-
         $nodes = $builder->latest()
             ->filter($request->all())
             ->paginate($request->get('per_page', 20));

@@ -25,7 +25,7 @@ use Overtrue\LaravelFollow\Traits\CanBeVoted;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $commentable
+// * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $commentable
  * @property-read \App\Content $content
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[] $downvoters
  * @property-read mixed $down_voters
