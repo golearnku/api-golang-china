@@ -28,7 +28,6 @@ class NodeController extends Controller
         $nodes = $builder->latest()
             ->filter($request->all())
             ->paginate($request->get('per_page', 20));
-
         return NodeResource::collection($nodes);
     }
 

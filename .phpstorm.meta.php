@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2019-05-13 01:39:27.
+    * Generated on 2019-05-14 02:14:21.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -160,7 +160,7 @@ namespace PHPSTORM_META {
         'migrator' => \Illuminate\Database\Migrations\Migrator::class,
         'purifier' => \Mews\Purifier\Purifier::class,
         'queue' => \Illuminate\Queue\QueueManager::class,
-        'queue.connection' => \Illuminate\Queue\SyncQueue::class,
+        'queue.connection' => \Laravel\Horizon\RedisQueue::class,
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'queue.listener' => \Illuminate\Queue\Listener::class,
         'queue.worker' => \Illuminate\Queue\Worker::class,
@@ -331,7 +331,7 @@ namespace PHPSTORM_META {
         'migrator' => \Illuminate\Database\Migrations\Migrator::class,
         'purifier' => \Mews\Purifier\Purifier::class,
         'queue' => \Illuminate\Queue\QueueManager::class,
-        'queue.connection' => \Illuminate\Queue\SyncQueue::class,
+        'queue.connection' => \Laravel\Horizon\RedisQueue::class,
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'queue.listener' => \Illuminate\Queue\Listener::class,
         'queue.worker' => \Illuminate\Queue\Worker::class,
@@ -502,7 +502,7 @@ namespace PHPSTORM_META {
         'migrator' => \Illuminate\Database\Migrations\Migrator::class,
         'purifier' => \Mews\Purifier\Purifier::class,
         'queue' => \Illuminate\Queue\QueueManager::class,
-        'queue.connection' => \Illuminate\Queue\SyncQueue::class,
+        'queue.connection' => \Laravel\Horizon\RedisQueue::class,
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'queue.listener' => \Illuminate\Queue\Listener::class,
         'queue.worker' => \Illuminate\Queue\Worker::class,
@@ -673,7 +673,7 @@ namespace PHPSTORM_META {
         'migrator' => \Illuminate\Database\Migrations\Migrator::class,
         'purifier' => \Mews\Purifier\Purifier::class,
         'queue' => \Illuminate\Queue\QueueManager::class,
-        'queue.connection' => \Illuminate\Queue\SyncQueue::class,
+        'queue.connection' => \Laravel\Horizon\RedisQueue::class,
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'queue.listener' => \Illuminate\Queue\Listener::class,
         'queue.worker' => \Illuminate\Queue\Worker::class,
@@ -844,7 +844,7 @@ namespace PHPSTORM_META {
         'migrator' => \Illuminate\Database\Migrations\Migrator::class,
         'purifier' => \Mews\Purifier\Purifier::class,
         'queue' => \Illuminate\Queue\QueueManager::class,
-        'queue.connection' => \Illuminate\Queue\SyncQueue::class,
+        'queue.connection' => \Laravel\Horizon\RedisQueue::class,
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'queue.listener' => \Illuminate\Queue\Listener::class,
         'queue.worker' => \Illuminate\Queue\Worker::class,
@@ -1015,7 +1015,7 @@ namespace PHPSTORM_META {
         'migrator' => \Illuminate\Database\Migrations\Migrator::class,
         'purifier' => \Mews\Purifier\Purifier::class,
         'queue' => \Illuminate\Queue\QueueManager::class,
-        'queue.connection' => \Illuminate\Queue\SyncQueue::class,
+        'queue.connection' => \Laravel\Horizon\RedisQueue::class,
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'queue.listener' => \Illuminate\Queue\Listener::class,
         'queue.worker' => \Illuminate\Queue\Worker::class,
@@ -1186,7 +1186,7 @@ namespace PHPSTORM_META {
         'migrator' => \Illuminate\Database\Migrations\Migrator::class,
         'purifier' => \Mews\Purifier\Purifier::class,
         'queue' => \Illuminate\Queue\QueueManager::class,
-        'queue.connection' => \Illuminate\Queue\SyncQueue::class,
+        'queue.connection' => \Laravel\Horizon\RedisQueue::class,
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'queue.listener' => \Illuminate\Queue\Listener::class,
         'queue.worker' => \Illuminate\Queue\Worker::class,
