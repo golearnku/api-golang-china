@@ -41,6 +41,13 @@ class ESInit extends Command
         $url = config('scout.elasticsearch.hosts')[0].'/_template/tmp';
         $param = [
             'json' => [
+                /*
+                * 这句是取在scout.php（scout是驱动）里我们配置好elasticsearch引擎的
+                * index项。
+                * PS：其实都是取数组项，scout本身就是return一个数组，
+                * scout.elasticsearch.index就是取
+                * scout[elasticsearch][index]
+                * */
                 'template' => config('scout.elasticsearch.index'),
                 'mappings' => [
                     '_default_' => [
